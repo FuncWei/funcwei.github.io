@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>javaScript的循环和循环中的let var区别 | 魏广洪的博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="javaScript的循环和循环中的let var区别
+可通过多种方式来重复执行语句或语句块。  一般，重复执行称为循环或迭代。  迭代就是循环的单次执行。  通常，它是由变量测试控制的，每次执行循环时，它的值都会发生变化。  JavaScript 支持四种类型的循环：for 循环、for…in 循环、while 循环、do…while 循环。
+
+首先说下循环概念：    
+
+循环（loop），指">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaScript的循环和循环中的let var区别">
+<meta property="og:url" content="http://yoursite.com/2016/09/30/javaScript的循环和循环中的let-var区别/index.html">
+<meta property="og:site_name" content="魏广洪的博客">
+<meta property="og:description" content="javaScript的循环和循环中的let var区别
+可通过多种方式来重复执行语句或语句块。  一般，重复执行称为循环或迭代。  迭代就是循环的单次执行。  通常，它是由变量测试控制的，每次执行循环时，它的值都会发生变化。  JavaScript 支持四种类型的循环：for 循环、for…in 循环、while 循环、do…while 循环。
+
+首先说下循环概念：    
+
+循环（loop），指">
+<meta property="og:updated_time" content="2016-09-30T10:43:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javaScript的循环和循环中的let var区别">
+<meta name="twitter:description" content="javaScript的循环和循环中的let var区别
+可通过多种方式来重复执行语句或语句块。  一般，重复执行称为循环或迭代。  迭代就是循环的单次执行。  通常，它是由变量测试控制的，每次执行循环时，它的值都会发生变化。  JavaScript 支持四种类型的循环：for 循环、for…in 循环、while 循环、do…while 循环。
+
+首先说下循环概念：    
+
+循环（loop），指">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=028c63b1" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">Posts List</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#javaScript的循环和循环中的let-var区别"><span class="toc-text">javaScript的循环和循环中的let var区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先说下循环"><span class="toc-text">首先说下循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-for循环"><span class="toc-text">1.for循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-for…in-循环"><span class="toc-text">2.for…in 循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-数组循环遍历之forEach"><span class="toc-text">3.数组循环遍历之forEach</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-javaScript的循环和循环中的let-var区别" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">javaScript的循环和循环中的let var区别</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.09.30</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>魏广洪</span>
+        </span>
+      
+
+      
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.forsigner.com/2016/09/30/javaScript的循环和循环中的let-var区别/#disqus_thread"></a>
+        </span>
+      
+
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="javaScript的循环和循环中的let-var区别"><a href="#javaScript的循环和循环中的let-var区别" class="headerlink" title="javaScript的循环和循环中的let var区别"></a>javaScript的循环和循环中的let var区别</h1><blockquote>
+<p>可通过多种方式来重复执行语句或语句块。  一般，重复执行称为<strong><em>循环或迭代。</em></strong>  <strong>迭代就是循环的单次执行</strong>。  通常，它是由变量测试控制的，每次执行循环时，它的值都会发生变化。  JavaScript 支持四种类型的循环：<em>for 循环、for…in 循环、while 循环、do…while 循环</em>。</p>
+</blockquote>
+<h2 id="首先说下循环"><a href="#首先说下循环" class="headerlink" title="首先说下循环"></a>首先说下循环</h2><pre><code>概念：    
+
+循环（loop），指的是在满足条件的情况下，重复执行同一段代码。比如，while语句。  
+
+迭代（iterate），指的是按照某种顺序逐个访问列表中的每一项。比如，for语句。  
+
+遍历（traversal），指的是按照一定的规则访问树形结构中的每个节点，而且每个节点都只访问一次。
+
+递归（recursion），指的是一个函数不断调用自身的行为。比如，以编程方式输出著名的斐波纳契数列。  
+</code></pre><h3 id="1-for循环"><a href="#1-for循环" class="headerlink" title="1.for循环"></a>1.for循环</h3><p>   <strong>for 语句指定一个计数器变量、一个测试条件以及一个更新计数器的操作</strong>。  <strong><em>在每次循环迭代之前，先测试条件。  如果测试成功，则执行循环内的代码。</em></strong>  如果测试失败，则不执行循环内的代码，程序继续执行紧靠循环后面的第一行代码。  <strong><em>在循环执行后和下一次迭代开始之前，先更新计数器变量。</em></strong> 如果循环条件始终不满足，则不执行该循环。  如果始终满足测试条件，则产生无限循环。  在某些情况下，可能希望出现前一种情况，但几乎从不希望出现后一种情况，因此编写循环条件时一定要谨慎。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">	var howFar = 10,</div><div class="line">		sum = [],</div><div class="line">		theSum = 0;</div><div class="line"></div><div class="line">	for (var i = 0; i &lt; howFar; i++ ) &#123;</div><div class="line">		theSum += i;</div><div class="line">		sum[i] = theSum;</div><div class="line">		console.log(theSum); // 0 1 3 6 10 15 21 28 36 35</div><div class="line">	&#125;</div><div class="line">	console.log(sum); // [0, 1, 3, 6, 10, 15, 21, 28, 36, 45]</div><div class="line">	console.log(i); // 10</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>注意：</strong> 在这里howFar为一个定义好的变量，在平常中我们多是对于一个Array.length 的循环，for循环的执行一次判断一次测试条件，那么久会执行一次计算一次Array.length的长度，so… 我们可以把 Array.length 定义在外面提高性能。</p>
+<h3 id="2-for…in-循环"><a href="#2-for…in-循环" class="headerlink" title="2.for…in 循环"></a>2.for…in 循环</h3><p>JavaScript 提供一种特殊的循环，用于单步执行对象的所有用户定义的<strong><em>属性</em></strong> 或 <strong><em>数组的所有元素</em></strong>。   for…in 循环中的循环计数器为<strong>字符串，而非数字</strong>。  <strong><em>它包含当前属性的名称或当前数组元素的索引。</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 遍历对象</div><div class="line">	var myObject = new Object();</div><div class="line">		myObject.name = &quot;James&quot;;</div><div class="line">		myObject.age = &quot;22&quot;;</div><div class="line">		myObject.phone = &quot;555 1234&quot;;</div><div class="line">		</div><div class="line">		for (var prop in myObject) &#123;</div><div class="line">			document.write(&quot;The property &apos;&quot; + prop + &quot;&apos; is &quot; + myObject[prop]);</div><div class="line">			document.write(&quot;&lt;br /&gt;&quot;); </div><div class="line">		&#125;</div><div class="line">		//The property &apos;name&apos; is James</div><div class="line">		//The property &apos;age&apos; is 22</div><div class="line">		//The property &apos;phone&apos; is 555 1234</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 循环数组</div><div class="line">	var x</div><div class="line">	var mycars = new Array()</div><div class="line">	mycars[0] = &quot;Saab&quot;</div><div class="line">	mycars[1] = &quot;Volvo&quot;</div><div class="line">	mycars[2] = &quot;BMW&quot;</div><div class="line"></div><div class="line">	for (x in mycars) &#123;</div><div class="line">		document.write(mycars[x] + &quot;&lt;br /&gt;&quot;)</div><div class="line">	&#125;</div><div class="line">	//Saab</div><div class="line">	//Volvo</div><div class="line">	//BMW</div></pre></td></tr></table></figure>
+<p><strong>注意:</strong> for in 循环在获取一个对象或者数组，里面的属性或索引所对应的值时候十分方便</p>
+<h3 id="3-数组循环遍历之forEach"><a href="#3-数组循环遍历之forEach" class="headerlink" title="3.数组循环遍历之forEach"></a>3.数组循环遍历之forEach</h3><p>数组循环变量，最先想到的就是 for(var i=0;i&lt;count;i++)这样的方式了。除此之外，也可以使用较简便的forEach 方式。Firefox 和Chrome 的Array 类型都有forEach的函数，在IE中却无法正常工作。因为IE的Array 没有这个方法！！！！！<br>forEach 有三个参数分别是：数组元素，元素的索引，数组本身（如果是一个参数就是数组元素，也就是数组的值)。Array.forEach(function(element,index,Array){});</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var mycars = new Array()</div><div class="line">mycars[0] = &quot;Saab&quot;</div><div class="line">mycars[1] = &quot;Volvo&quot;</div><div class="line">mycars[2] = &quot;BMW&quot;</div><div class="line"></div><div class="line">mycars.forEach(function(el,index)&#123;</div><div class="line">	document.write(mycars[index] + &quot;&lt;br /&gt;&quot;);</div><div class="line">	document.write(el + &quot;&lt;br /&gt;&quot;);</div><div class="line">&#125;)</div><div class="line"></div><div class="line">//Saab</div><div class="line">//Saab</div><div class="line">//Volvo</div><div class="line">//Volvo</div><div class="line">//BMW</div></pre></td></tr></table></figure>
+<p><strong>注意:</strong> forEach 用来遍历数组，在IE中Array没有forEach()这个方法。</p>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">Close</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'http://yoursite.com/2016/09/30/javaScript的循环和循环中的let-var区别/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
