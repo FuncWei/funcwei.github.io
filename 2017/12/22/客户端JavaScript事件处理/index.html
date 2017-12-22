@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="querySelector 和 querySelectorAll1.querySelector 和 querySelectorAll 方法是 W3C Selectors API 规范中定义的。他们的作用是根据 CSS 选择器规范，便捷定位文档中指定元素.  2.querySelector和querySelectorAll的参数须是符合 css selector 的字符串。不同的是querySele">
+<meta property="og:type" content="article">
+<meta property="og:title" content="客户端JavaScript事件处理">
+<meta property="og:url" content="http://yoursite.com/2017/12/22/客户端JavaScript事件处理/index.html">
+<meta property="og:site_name" content="魏广洪的博客">
+<meta property="og:description" content="querySelector 和 querySelectorAll1.querySelector 和 querySelectorAll 方法是 W3C Selectors API 规范中定义的。他们的作用是根据 CSS 选择器规范，便捷定位文档中指定元素.  2.querySelector和querySelectorAll的参数须是符合 css selector 的字符串。不同的是querySele">
+<meta property="og:updated_time" content="2017-12-22T09:16:08.845Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="客户端JavaScript事件处理">
+<meta name="twitter:description" content="querySelector 和 querySelectorAll1.querySelector 和 querySelectorAll 方法是 W3C Selectors API 规范中定义的。他们的作用是根据 CSS 选择器规范，便捷定位文档中指定元素.  2.querySelector和querySelectorAll的参数须是符合 css selector 的字符串。不同的是querySele">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>客户端JavaScript事件处理</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2017/12/22/hello-world/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&text=客户端JavaScript事件处理"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&title=客户端JavaScript事件处理"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&is_video=false&description=客户端JavaScript事件处理"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=客户端JavaScript事件处理&body=Check out this article: http://yoursite.com/2017/12/22/客户端JavaScript事件处理/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&title=客户端JavaScript事件处理"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&title=客户端JavaScript事件处理"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&title=客户端JavaScript事件处理"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&title=客户端JavaScript事件处理"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&name=客户端JavaScript事件处理&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#querySelector-和-querySelectorAll"><span class="toc-number">1.</span> <span class="toc-text">querySelector 和 querySelectorAll</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#focus-blur-和-focusin-focusout"><span class="toc-number">2.</span> <span class="toc-text">focus blur 和 focusin  focusout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mouseover-mouseout-和-mouseenter-mouseleave"><span class="toc-number">3.</span> <span class="toc-text">mouseover mouseout 和 mouseenter mouseleave</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#addEventListener-attachEvent-on"><span class="toc-number">4.</span> <span class="toc-text">addEventListener attachEvent on</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        客户端JavaScript事件处理
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">魏广洪的博客</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-12-22T08:57:42.000Z" itemprop="datePublished">2017-12-22</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="querySelector-和-querySelectorAll"><a href="#querySelector-和-querySelectorAll" class="headerlink" title="querySelector 和 querySelectorAll"></a>querySelector 和 querySelectorAll</h2><pre><code>1.querySelector 和 querySelectorAll 方法是 W3C Selectors API 规范中定义的。他们的作用是根据 CSS 选择器规范，便捷定位文档中指定元素.
+
+2.querySelector和querySelectorAll的参数须是符合 css selector 的字符串。不同的是querySelector返回的是一个对象，querySelectorAll返回的一个集合(NodeList)。
+</code></pre><h2 id="focus-blur-和-focusin-focusout"><a href="#focus-blur-和-focusin-focusout" class="headerlink" title="focus blur 和 focusin  focusout"></a>focus blur 和 focusin  focusout</h2><pre><code>1.focus blur 不支持冒泡， focusin focusout 支持冒泡
+
+2.事件执行顺序为focusin &amp;gt; focus &amp;gt; focusout &amp;gt; blur
+</code></pre><h2 id="mouseover-mouseout-和-mouseenter-mouseleave"><a href="#mouseover-mouseout-和-mouseenter-mouseleave" class="headerlink" title="mouseover mouseout 和 mouseenter mouseleave"></a>mouseover mouseout 和 mouseenter mouseleave</h2><pre><code>1.mouseover,mouseout 冒泡，mouseenter, mouseleave 不冒泡
+
+2.与 mouseenter 事件不同，不论鼠标指针穿过被选元素或其子元素，都会触发 mouseover 事件。只有在鼠标指针穿过被选元素时，才会触发 mouseenter 事件。
+
+3.与 mouseleave 事件不同，不论鼠标指针离开被选元素还是任何子元素，都会触发 mouseout 事件。只有在鼠标指针离开被选元素时，才会触发 mouseleave 事件。
+</code></pre><h2 id="addEventListener-attachEvent-on"><a href="#addEventListener-attachEvent-on" class="headerlink" title="addEventListener attachEvent on"></a>addEventListener attachEvent on</h2><pre><code>### Mozilla中：
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">target.addEventListener(<span class="built_in">type</span>, listener, useCapture); </span><br><span class="line">removeEventListener(event,<span class="keyword">function</span>,capture/bubble);</span><br></pre></td></tr></table></figure>
+
+target： 文档节点、document、window 或 XMLHttpRequest。 
+type： 字符串，事件名称，不含“on”，比如“click”、“mouseover”、“keydown”等。 
+listener ：实现了 EventListener 接口或者是 JavaScript 中的函数。 
+useCapture ：是否使用捕捉，一般用 false 。例如：document.getElementById(&quot;testText&quot;).addEventListener(&quot;keydown&quot;, function (event) { alert(event.keyCode); }, false); 
+
+
+### IE中：
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">target.attachEvent(<span class="built_in">type</span>, listener); </span><br><span class="line">detachEvent(event,<span class="keyword">function</span>);</span><br></pre></td></tr></table></figure>
+
+target： 文档节点、document、window 或 XMLHttpRequest。 
+type： 字符串，事件名称，含“on”，比如“onclick”、“onmouseover”、“onkeydown”等。 
+listener ：实现了 EventListener 接口或者是 JavaScript 中的函数。 例如：document.getElementById(&quot;txt&quot;).attachEvent(&quot;onclick&quot;,function(event){alert(event.keyCode);}); 
+attachEvent不需要指定capture/bubble的参数, 因为在windows IE环境下都是使用Bubble的模式
+
+
+
+### 不同点：
+
+    1.IE8以后都支持标准事件模型addEventListener，IE9之前不支持，支持attachEvent
+       2.addEventListener为3个参数，支持时间冒泡和捕获，attachEvent为两个参数
+        3.addEventListener第一个参数为事件类型不带’on’，而attachEvent需要带’on’
+    4.addEventListener中事件处理函数中的this指向事件目标，而attachEvent事件处理函数中的this指向window。
+    5.调用顺序：对象属性和HTML属性注册一直优先调用；addEventListener按注册顺序调用；attachEvent顺序随机调用
+
+### on:
+
+1. On绑定多个相同事件会被覆盖，addEventListener可以多次绑定同一个事件并且不会覆盖上一个事件。
+2.addEventListener可以使用事件捕获阶段触发事件发生，而on做不到
+
+### 事件传播
+
+事件捕获 -&gt; 执行目标处理程序 -&gt; 事件冒泡 -&gt; 执行父级目标处理程序 -&gt; document -&gt; window
+
+事件捕获只能用于以addEventListener()注册且第三个参数为true的事件处理程序中
+
+捕获顺序： window-&gt;document-&gt;body-&gt;DOM-&gt;调用事件目标的父元素的捕获事件处理程序，在目标对象本事上注册的捕获事件处理程序不会被调用。
+</code></pre>
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#querySelector-和-querySelectorAll"><span class="toc-number">1.</span> <span class="toc-text">querySelector 和 querySelectorAll</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#focus-blur-和-focusin-focusout"><span class="toc-number">2.</span> <span class="toc-text">focus blur 和 focusin  focusout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mouseover-mouseout-和-mouseenter-mouseleave"><span class="toc-number">3.</span> <span class="toc-text">mouseover mouseout 和 mouseenter mouseleave</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#addEventListener-attachEvent-on"><span class="toc-number">4.</span> <span class="toc-text">addEventListener attachEvent on</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&text=客户端JavaScript事件处理"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&title=客户端JavaScript事件处理"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&is_video=false&description=客户端JavaScript事件处理"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=客户端JavaScript事件处理&body=Check out this article: http://yoursite.com/2017/12/22/客户端JavaScript事件处理/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&title=客户端JavaScript事件处理"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&title=客户端JavaScript事件处理"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&title=客户端JavaScript事件处理"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&title=客户端JavaScript事件处理"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2017/12/22/客户端JavaScript事件处理/&name=客户端JavaScript事件处理&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 魏广洪
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
